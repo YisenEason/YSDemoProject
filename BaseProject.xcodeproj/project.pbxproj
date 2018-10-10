@@ -16,6 +16,10 @@
 		A93DD779216084C100D073DC /* ic_remove_wh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93DD776216084C100D073DC /* ic_remove_wh@3x.png */; };
 		A93DD77A216084C100D073DC /* ic_remove_wh.png in Resources */ = {isa = PBXBuildFile; fileRef = A93DD777216084C100D073DC /* ic_remove_wh.png */; };
 		A93DD786216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD785216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m */; };
+		A93DD7A6216CB15900D073DC /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD79F216CB15900D073DC /* NetworkManager.m */; };
+		A93DD7AD216CB9BF00D073DC /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD7AC216CB9BF00D073DC /* DataModel.m */; };
+		A93DD7B1216DB65B00D073DC /* ResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD7B0216DB65B00D073DC /* ResultModel.m */; };
+		A93DD7B5216DB80000D073DC /* NetWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD7B4216DB80000D073DC /* NetWorkViewController.m */; };
 		A97FBF2620EB525A0003D09F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A97FBF2520EB525A0003D09F /* AppDelegate.m */; };
 		A97FBF2920EB525A0003D09F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A97FBF2820EB525A0003D09F /* ViewController.m */; };
 		A97FBF2C20EB525A0003D09F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A97FBF2A20EB525A0003D09F /* Main.storyboard */; };
@@ -74,6 +78,15 @@
 		A93DD777216084C100D073DC /* ic_remove_wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_remove_wh.png; path = "../../../../../../Desktop/test intercom/ic_remove_wh.png"; sourceTree = "<group>"; };
 		A93DD784216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+IBDesignable.h"; sourceTree = "<group>"; };
 		A93DD785216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+IBDesignable.m"; sourceTree = "<group>"; };
+		A93DD78F216CB15900D073DC /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		A93DD79E216CB15900D073DC /* NetworkMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkMacro.h; sourceTree = "<group>"; };
+		A93DD79F216CB15900D073DC /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		A93DD7AB216CB9BF00D073DC /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
+		A93DD7AC216CB9BF00D073DC /* DataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		A93DD7AF216DB65B00D073DC /* ResultModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultModel.h; sourceTree = "<group>"; };
+		A93DD7B0216DB65B00D073DC /* ResultModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultModel.m; sourceTree = "<group>"; };
+		A93DD7B3216DB80000D073DC /* NetWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetWorkViewController.h; sourceTree = "<group>"; };
+		A93DD7B4216DB80000D073DC /* NetWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorkViewController.m; sourceTree = "<group>"; };
 		A97FBF2120EB525A0003D09F /* BaseProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaseProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A97FBF2420EB525A0003D09F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A97FBF2520EB525A0003D09F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -220,6 +233,45 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		A93DD78E216CB15900D073DC /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				A93DD7AE216DB23400D073DC /* Model */,
+				A93DD78F216CB15900D073DC /* NetworkManager.h */,
+				A93DD79F216CB15900D073DC /* NetworkManager.m */,
+				A93DD79E216CB15900D073DC /* NetworkMacro.h */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		A93DD7A7216CB6B500D073DC /* 网络请求 */ = {
+			isa = PBXGroup;
+			children = (
+				A93DD7B2216DB65F00D073DC /* Model */,
+				A93DD7B3216DB80000D073DC /* NetWorkViewController.h */,
+				A93DD7B4216DB80000D073DC /* NetWorkViewController.m */,
+			);
+			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		A93DD7AE216DB23400D073DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A93DD7AB216CB9BF00D073DC /* DataModel.h */,
+				A93DD7AC216CB9BF00D073DC /* DataModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A93DD7B2216DB65F00D073DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A93DD7AF216DB65B00D073DC /* ResultModel.h */,
+				A93DD7B0216DB65B00D073DC /* ResultModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A97FBF1820EB525A0003D09F = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +392,7 @@
 		A97FBF6E20EB80340003D09F /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				A93DD7A7216CB6B500D073DC /* 网络请求 */,
 				A93DD76C21607F7200D073DC /* 模态自定义弹窗 */,
 				A93DD76821607DF500D073DC /* 获取Label高度 */,
 				A93DD76421607BD300D073DC /* 自定义封装TextFiled */,
@@ -350,6 +403,7 @@
 		A97FBF7020EB80590003D09F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A93DD78E216CB15900D073DC /* NetworkManager */,
 				A97FBF7220EB807E0003D09F /* UserManager */,
 			);
 			path = Manager;
@@ -658,15 +712,19 @@
 				A9F30B8C215CAAD10086441C /* NSObject+SBAdapterFont.m in Sources */,
 				A97FBF2920EB525A0003D09F /* ViewController.m in Sources */,
 				A97FBF8A20EC7E300003D09F /* FRDAWSModule.m in Sources */,
+				A93DD7AD216CB9BF00D073DC /* DataModel.m in Sources */,
 				A97FBF3420EB525C0003D09F /* main.m in Sources */,
 				A93DD76F21607F9800D073DC /* CustomAlertVC.m in Sources */,
 				A97FBF5920EB55AA0003D09F /* BaseModel.m in Sources */,
 				A97FBF8E20EC819D0003D09F /* FRDModuleManager.m in Sources */,
+				A93DD7B1216DB65B00D073DC /* ResultModel.m in Sources */,
 				A97FBF9120EC82C10003D09F /* FRDNetworkingModule.m in Sources */,
 				A93DD76721607C1800D073DC /* TextFiledVC.m in Sources */,
 				A9F30B90215CBEC30086441C /* YSTextField.m in Sources */,
 				A93DD76B21607E2100D073DC /* LabelVC.m in Sources */,
 				A9B06D19215B6203008DB52A /* UIFont+runtime.m in Sources */,
+				A93DD7A6216CB15900D073DC /* NetworkManager.m in Sources */,
+				A93DD7B5216DB80000D073DC /* NetWorkViewController.m in Sources */,
 				A97FBF2620EB525A0003D09F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

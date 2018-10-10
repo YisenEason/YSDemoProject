@@ -11,6 +11,7 @@
 #import "TextFiledVC.h"
 #import "LabelVC.h"
 #import "CustomAlertVC.h"
+#import "NetWorkViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -31,7 +32,7 @@
 #pragma mark - Lazy load
 - (NSMutableArray*)dataArray {
     if (_dataArray == nil) {
-        _dataArray = [[NSMutableArray alloc]initWithObjects:@"模态自定义弹窗",@"获取Label高度",@"自定义封装TextFiled", nil];
+        _dataArray = [[NSMutableArray alloc]initWithObjects:@"模态自定义弹窗",@"获取Label高度",@"自定义封装TextFiled",@"网络请求", nil];
     }
     return _dataArray;
 }
@@ -73,6 +74,11 @@
         }
         case 2:{
             TextFiledVC *vc = [[TextFiledVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 3:{
+            NetWorkViewController *vc = [[NetWorkViewController alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
