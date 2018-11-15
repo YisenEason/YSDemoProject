@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
 #import "NetworkMacro.h"
-#import "DataModel.h"
+#import "ResponeModel.h"
 
 static AFHTTPSessionManager *_sessionManager;
 
@@ -24,20 +24,23 @@ static AFHTTPSessionManager *_sessionManager;
 /// 上传或者下载的进度, Progress.completedUnitCount:当前大小 - Progress.totalUnitCount:总大小
 typedef void (^HttpProgress)(NSProgress *progress);
 
-
+/**
+ 单例，返回全局实例
+ 
+ @return 全局实例
+ */
 + (NetworkManager *)shareNetworkManager;
 
 
 /**
  GET请求接口
-
- @param url 请求接口
- @param parameters 接口传入参数内容
- @param modelClass Model类
- @param successful 成功Block返回
- @param failure 失败Block返回
+ 
+ @param url 地址
+ @param parameters 参数
+ @param modelClass 类
+ @param successful 成功回调
+ @param failure 失败回调
  */
-
 - (void)GetWithUrl:(NSString *)url
         parameters:(NSDictionary *)parameters
         modelClass:(Class) modelClass
@@ -47,12 +50,12 @@ typedef void (^HttpProgress)(NSProgress *progress);
 
 /**
  POST请求接口
-
- @param url 请求接口
- @param parameters 接口传入参数
- @param modelClass Model类
- @param successful 成功Block返回
- @param failure 失败Block返回
+ 
+ @param url 地址
+ @param parameters 参数
+ @param modelClass 类
+ @param successful 成功回调
+ @param failure 失败回调
  */
 - (void)PostWithUrl:(NSString *)url
         parameters:(NSDictionary *)parameters

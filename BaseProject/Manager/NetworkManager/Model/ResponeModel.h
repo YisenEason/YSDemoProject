@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 
-@interface DataModel : BaseModel
+@interface ResponeModel : BaseModel
 
 @property (nonatomic, assign) NSInteger code;
 @property (nonatomic, copy) NSString *message;

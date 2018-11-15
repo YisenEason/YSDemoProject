@@ -12,19 +12,8 @@
 
 static NetworkManager *_instance;
 
-
-+ (id)allocWithZone:(struct _NSZone *)zone
-{
++ (instancetype)shareNetworkManager {
     //调用dispatch_once保证在多线程中也只被实例化一次
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _instance = [super allocWithZone:zone];
-    });
-    return _instance;
-}
-
-+ (instancetype)shareNetworkManager
-{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[NetworkManager alloc] init];
@@ -32,92 +21,74 @@ static NetworkManager *_instance;
     return _instance;
 }
 
-- (id)copyWithZone:(NSZone *)zone
-{
-    return _instance;
-}
-
-- (id)init
-{
+- (id)init {
     self = [super init];
-    if (self)
-    {
+    if (self){
         
     }
-    
     return self;
 }
-
-/**
- GET请求接口
- 
- @param url 请求接口
- @param parameters 接口传入参数内容
- @param successful 成功Block返回
- @param failure 失败Block返回
- */
 
 - (void)GetWithUrl:(NSString *)url
         parameters:(NSDictionary *)parameters
         modelClass:(Class) modelClass
         success:(void (^)(id result))successful
-        failure:(void (^) (NSError *error, id result))failure
-{
+        failure:(void (^) (NSError *error, id result))failure {
     //开始请求内容
     [_sessionManager GET:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"\n Request Url--->%@\n Request Param--->%@",task.currentRequest.URL,parameters);
         
-        DataModel *dataModel = [[modelClass alloc] initWithDictionary:responseObject];
-        
-        if (dataModel.code != 200) {
-            NSError *error = [[NSError alloc] initWithDomain:@"InterfaceError" code:dataModel.code userInfo:@{NSLocalizedDescriptionKey:dataModel.message}];
-            failure(error,dataModel);
-        }else {
-            successful(dataModel);
+        NSError *error;
+        // Dictionary转为Model
+        ResponeModel *responeModel = [[modelClass alloc] initWithDictionary:responseObject error:&error];
+        if (error) {
+            // 失败
+            failure(error,nil);
+            return;
+        }
+        if (responeModel.code != NetSuccessCode) {
+            NSError *error = [[NSError alloc] initWithDomain:@"InterfaceError" code:responeModel.code userInfo:@{NSLocalizedDescriptionKey:responeModel.message}];
+            failure(error,responeModel);
+            return;
         }
         
+        successful(responeModel);
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"\n Request Url--->%@\n Request Param--->%@",task.currentRequest.URL,parameters);
         NSLog(@"%@", error);
         failure(error, nil);
     }];
 
 }
 
-/**
- POST请求接口
- 
- @param url 请求接口
- @param parameters 接口传入参数
- @param successful 成功Block返回
- @param failure 失败Block返回
- */
+
 - (void)PostWithUrl:(NSString *)url
         parameters:(NSDictionary *)parameters
         modelClass:(Class) modelClass
         success:(void (^)(id result))successful
-        failure:(void (^) (NSError *error, id result))failure
-{
+        failure:(void (^) (NSError *error, id result))failure {
     //开始请求内容
     [_sessionManager POST:url parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"\n Request Url--->%@\n Request Param--->%@",task.currentRequest.URL,parameters);
         
-        DataModel *dataModel = [[modelClass alloc] initWithDictionary:responseObject];
-        
-        if (dataModel.code != NetSuccessCode) {
-            NSError *error = [[NSError alloc] initWithDomain:@"InterfaceError" code:dataModel.code userInfo:@{NSLocalizedDescriptionKey:dataModel.message}];
-            failure(error,dataModel);
+        NSError *error;
+        // Dictionary转为Model
+        ResponeModel *responeModel = [[modelClass alloc] initWithDictionary:responseObject error:&error];
+        if (error) {
+            // 失败
+            failure(error,nil);
+            return;
+        }
+        if (responeModel.code != NetSuccessCode) {
+            NSError *error = [[NSError alloc] initWithDomain:@"InterfaceError" code:responeModel.code userInfo:@{NSLocalizedDescriptionKey:responeModel.message}];
+            failure(error,responeModel);
         }else {
-            successful(dataModel);
+            successful(responeModel);
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"\n Request Url--->%@\n Request Param--->%@",task.currentRequest.URL,parameters);
         NSLog(@"%@", error);
         failure(error, nil);
     }];
@@ -125,24 +96,13 @@ static NetworkManager *_instance;
     
 }
 
-/**
- 图片上传接口(上传音频与图片是一致的，需要更改的只是 mimeType类型，根据要求设置对应的格式即可)
- 
- @param url 请求接口
- @param paramters 请求参数
- @param pictureData 图片数据
- @param pictureKey 与后台约定的 文件key
- @param progress 上传进度
- @param successful 成功返回
- @param failure 失败返回
- */
+
 - (void)HeaderUploadWithUrl:(NSString *)url parameters:(NSDictionary *)paramters
             pictureData:(NSData *)pictureData
              pictureKey:(NSString *)pictureKey
                progress:(HttpProgress)progress
                 success:(void (^) (id responseObject))successful
-                failure:(void (^) (NSError *error))failure
-{
+                failure:(void (^) (NSError *error))failure {
 
     [_sessionManager POST:url parameters:paramters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //对上传完文件的配置
@@ -169,21 +129,12 @@ static NetworkManager *_instance;
 }
 
 
-/**
- 下载文件接口
 
- @param url 请求接口
- @param progress 下载进度
- @param downloadFilePath 文件保存路径
- @param successful  返回路径内容
- @param failure 失败返回
- */
 - (void)downloadWithUrl:(NSString *)url
         progress:(HttpProgress)progress
         downloadFilePath:(NSString *)downloadFilePath
         success:(void (^) (id responseObject))successful
-        failure:(void (^) (NSError *error))failure
-  {
+        failure:(void (^) (NSError *error))failure {
     //下载地址
     NSURL *downloadURL = [NSURL URLWithString:url];
     //设置请求

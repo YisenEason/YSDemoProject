@@ -6,8 +6,8 @@
 //  Copyright © 2018年 eason. All rights reserved.
 //
 
-#import "DataModel.h"
+#import "ResponeModel.h"
 
-@implementation DataModel
+@implementation ResponeModel
 
 @end

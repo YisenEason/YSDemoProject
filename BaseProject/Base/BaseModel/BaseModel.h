@@ -10,6 +10,4 @@
 
 @interface BaseModel : JSONModel
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
-
 @end

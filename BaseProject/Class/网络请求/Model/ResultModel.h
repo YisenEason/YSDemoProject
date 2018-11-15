@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *category;
 @end
 
-@interface ResultModel : DataModel
+@interface ResultModel : ResponeModel
 @property (nonatomic, strong) ResultData *result;
 @end
 

@@ -18,13 +18,14 @@
 #import "UtilsMacros.h"
 #import "NotificationMacros.h"
 #import "AppMacros.h"
-#import <XMNetworking/XMNetworking.h>
-#import <SVProgressHUD.h>
+#import <MBProgressHUD.h>
 #import <SDWebImageManager.h>
 #import <UIImageView+WebCache.h>
 #import <Masonry.h>
 #import "NetworkManager.h"
 #import "BaseModel.h"
+#import <UIImageView+WebCache.h>
+#import "HUDManager.h"
 
 
 #endif /* PrefixHeader_pch */

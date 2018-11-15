@@ -31,13 +31,11 @@
 
 - (void)show:(id)sender {
     NSLog(@"显示弹窗");
-    YSAlertViewController *alertController = [YSAlertViewController alertShow];
-//    [self presentViewController:alertController animated:NO completion:nil];
-//    [self addChildViewController:alertController];
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor grayColor];
-    [self presentViewController:vc animated:NO completion:nil];
+    YSAlertViewController *alert = [YSAlertViewController alertShow];
+//    alert.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    alert.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -20,13 +20,4 @@
     return YES;
 }
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict {
-    NSError *error = nil;
-    self = [super initWithDictionary:dict error:&error];
-    if (self) {
-        self = [self initWithDictionary:dict error:&error];
-    }
-    return self;
-}
-
 @end

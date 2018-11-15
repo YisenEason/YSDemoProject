@@ -42,10 +42,12 @@
 }
 
 - (void)GetBtnAction:(id)sender {
+    [[HUDManager shareHUDManager] showLoadingInView:self.view];
     WeakSelf(weakSelf)
     [[NetworkManager shareNetworkManager] GetWithUrl:@"http://api.apiopen.top/singlePoetry" parameters:nil modelClass:[ResultModel class] success:^(id result) {
         NSLog(@"%@", result);
         weakSelf.requestLabel.text = [result toJSONString];
+        [[HUDManager shareHUDManager] hideLoadingInView:weakSelf.view];
     } failure:^(NSError *error, id result) {
         NSLog(@"%@", error);
     }];

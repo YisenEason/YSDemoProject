@@ -12,6 +12,10 @@
 #import "LabelVC.h"
 #import "CustomAlertVC.h"
 #import "NetWorkViewController.h"
+#import "YSAlertViewController.h"
+#import "CollectViewVC.h"
+#import "RSSManager.h"
+#import "HUDManager.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -26,13 +30,12 @@
     // Do any additional setup after loading the view, typically from a nib.
  
     [self.view addSubview:self.tableView];
-    
 }
 
 #pragma mark - Lazy load
 - (NSMutableArray*)dataArray {
     if (_dataArray == nil) {
-        _dataArray = [[NSMutableArray alloc]initWithObjects:@"模态自定义弹窗",@"获取Label高度",@"自定义封装TextFiled",@"网络请求", nil];
+        _dataArray = [[NSMutableArray alloc]initWithObjects:@"模态自定义弹窗",@"获取Label高度",@"自定义封装TextFiled",@"网络请求",@"Collection布局(3XN纵排)", nil];
     }
     return _dataArray;
 }
@@ -79,6 +82,11 @@
         }
         case 3:{
             NetWorkViewController *vc = [[NetWorkViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case 4:{
+            CollectViewVC *vc = [[CollectViewVC alloc] init];
             [self.navigationController pushViewController:vc animated:YES];
             break;
         }
