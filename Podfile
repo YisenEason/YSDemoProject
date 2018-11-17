@@ -11,7 +11,8 @@ target 'BaseProject' do
    pod 'XMNetworking', '~> 1.1.0'
    pod 'SVProgressHUD'
    pod 'SDWebImage'
-   pod 'Masonry'                   
+   pod 'Masonry'
+   pod 'MBProgressHUD'
 #   pod 'INTULocationManager'  需要9.0以上才可以使用
 
 end
