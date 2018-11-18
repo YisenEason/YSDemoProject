@@ -90,7 +90,7 @@
 //            CollectViewVC *vc = [[CollectViewVC alloc] init];
 //            [self.navigationController pushViewController:vc animated:YES];
             WebViewController *webView = [[WebViewController alloc] init];
-            webView.url = @"www.baidu.com";
+            webView.url = @"https://www.douyu.com";
             [self.navigationController pushViewController:webView animated:YES];
             break;
         }

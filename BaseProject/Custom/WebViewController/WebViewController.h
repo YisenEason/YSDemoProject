@@ -14,4 +14,6 @@
 
 @property(nonatomic,strong) NSString* url;
 
+@property (nonatomic,weak) CALayer *progressLayer;
+
 @end
