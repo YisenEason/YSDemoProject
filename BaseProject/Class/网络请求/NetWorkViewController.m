@@ -44,12 +44,13 @@
 - (void)GetBtnAction:(id)sender {
     [[HUDManager shareHUDManager] showLoadingInView:self.view];
     WeakSelf(weakSelf)
-    [[NetworkManager shareNetworkManager] GetWithUrl:@"http://api.apiopen.top/singlePoetry" parameters:nil modelClass:[ResultModel class] success:^(id result) {
+    [[NetworkManager shareNetworkManager] GetWithUrl:@"https://klupontologyapiv2.azurewebsites.net/api/distil" parameters:nil modelClass:[ResponeModel class] success:^(id result) {
         NSLog(@"%@", result);
-        weakSelf.requestLabel.text = [result toJSONString];
+//        weakSelf.requestLabel.text = [result toJSONString];
         [[HUDManager shareHUDManager] hideLoadingInView:weakSelf.view];
     } failure:^(NSError *error, id result) {
         NSLog(@"%@", error);
+        [[HUDManager shareHUDManager] showMessage:error.userInfo[NSLocalizedDescriptionKey] view:weakSelf.view];
     }];
 }
 

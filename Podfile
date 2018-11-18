@@ -8,10 +8,11 @@ target 'BaseProject' do
   # Pods for ReactiveCocoa
    pod 'ReactiveObjC', '~> 3.1.0'
    pod 'JSONModel'
-   pod 'XMNetworking', '~> 1.1.0'
-   pod 'SVProgressHUD'
+   pod 'AFNetworking'
+   pod 'MBProgressHUD'
    pod 'SDWebImage'
-   pod 'Masonry'                   
+   pod 'Masonry'
+   pod 'SDWebImage'
 #   pod 'INTULocationManager'  需要9.0以上才可以使用
 
 end

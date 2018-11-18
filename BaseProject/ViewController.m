@@ -16,6 +16,7 @@
 #import "CollectViewVC.h"
 #import "RSSManager.h"
 #import "HUDManager.h"
+#import "WebViewController.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -86,8 +87,11 @@
             break;
         }
         case 4:{
-            CollectViewVC *vc = [[CollectViewVC alloc] init];
-            [self.navigationController pushViewController:vc animated:YES];
+//            CollectViewVC *vc = [[CollectViewVC alloc] init];
+//            [self.navigationController pushViewController:vc animated:YES];
+            WebViewController *webView = [[WebViewController alloc] init];
+            webView.url = @"www.baidu.com";
+            [self.navigationController pushViewController:webView animated:YES];
             break;
         }
         default:
