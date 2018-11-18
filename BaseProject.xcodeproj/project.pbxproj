@@ -12,9 +12,6 @@
 		A93DD76B21607E2100D073DC /* LabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD76A21607E2100D073DC /* LabelVC.m */; };
 		A93DD76F21607F9800D073DC /* CustomAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD76E21607F9800D073DC /* CustomAlertVC.m */; };
 		A93DD7732160805B00D073DC /* YSAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD7722160805B00D073DC /* YSAlertViewController.m */; };
-		A93DD778216084C100D073DC /* ic_remove_wh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93DD775216084C100D073DC /* ic_remove_wh@2x.png */; };
-		A93DD779216084C100D073DC /* ic_remove_wh@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A93DD776216084C100D073DC /* ic_remove_wh@3x.png */; };
-		A93DD77A216084C100D073DC /* ic_remove_wh.png in Resources */ = {isa = PBXBuildFile; fileRef = A93DD777216084C100D073DC /* ic_remove_wh.png */; };
 		A93DD786216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD785216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m */; };
 		A93DD7A6216CB15900D073DC /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD79F216CB15900D073DC /* NetworkManager.m */; };
 		A93DD7AD216CB9BF00D073DC /* ResponeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD7AC216CB9BF00D073DC /* ResponeModel.m */; };
@@ -85,9 +82,6 @@
 		A93DD76E21607F9800D073DC /* CustomAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomAlertVC.m; sourceTree = "<group>"; };
 		A93DD7712160805B00D073DC /* YSAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSAlertViewController.h; sourceTree = "<group>"; };
 		A93DD7722160805B00D073DC /* YSAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSAlertViewController.m; sourceTree = "<group>"; };
-		A93DD775216084C100D073DC /* ic_remove_wh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_remove_wh@2x.png"; path = "../../../../../../Desktop/test intercom/ic_remove_wh@2x.png"; sourceTree = "<group>"; };
-		A93DD776216084C100D073DC /* ic_remove_wh@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_remove_wh@3x.png"; path = "../../../../../../Desktop/test intercom/ic_remove_wh@3x.png"; sourceTree = "<group>"; };
-		A93DD777216084C100D073DC /* ic_remove_wh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_remove_wh.png; path = "../../../../../../Desktop/test intercom/ic_remove_wh.png"; sourceTree = "<group>"; };
 		A93DD784216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+IBDesignable.h"; sourceTree = "<group>"; };
 		A93DD785216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+IBDesignable.m"; sourceTree = "<group>"; };
 		A93DD78F216CB15900D073DC /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -259,16 +253,6 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
-		A93DD7742160834B00D073DC /* Image */ = {
-			isa = PBXGroup;
-			children = (
-				A93DD777216084C100D073DC /* ic_remove_wh.png */,
-				A93DD775216084C100D073DC /* ic_remove_wh@2x.png */,
-				A93DD776216084C100D073DC /* ic_remove_wh@3x.png */,
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
 		A93DD78E216CB15900D073DC /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,7 +345,6 @@
 				A97FBF6920EB75DC0003D09F /* Config */,
 				A97FBF8120EC72940003D09F /* Utils */,
 				A97FBF7F20EC72070003D09F /* Libs */,
-				A97FBF7E20EC71F00003D09F /* Resource */,
 				A97FBF7020EB80590003D09F /* Manager */,
 				A97FBF6E20EB80340003D09F /* Class */,
 				A97FBF6820EB75830003D09F /* Base */,
@@ -480,14 +463,6 @@
 				A97FBF7A20EB81870003D09F /* UserManager.m */,
 			);
 			path = UserManager;
-			sourceTree = "<group>";
-		};
-		A97FBF7E20EC71F00003D09F /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				A93DD7742160834B00D073DC /* Image */,
-			);
-			path = Resource;
 			sourceTree = "<group>";
 		};
 		A97FBF7F20EC72070003D09F /* Libs */ = {
@@ -630,6 +605,7 @@
 				A97FBF1D20EB525A0003D09F /* Sources */,
 				A97FBF1E20EB525A0003D09F /* Frameworks */,
 				A97FBF1F20EB525A0003D09F /* Resources */,
+				A203B739E960C623D274F740 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -728,12 +704,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93DD778216084C100D073DC /* ic_remove_wh@2x.png in Resources */,
 				A97FBF3120EB525C0003D09F /* LaunchScreen.storyboard in Resources */,
-				A93DD779216084C100D073DC /* ic_remove_wh@3x.png in Resources */,
 				A97FBF8720EC7DD00003D09F /* ModulesRegister.plist in Resources */,
 				A97FBF2E20EB525C0003D09F /* Assets.xcassets in Resources */,
-				A93DD77A216084C100D073DC /* ic_remove_wh.png in Resources */,
 				A97FBF2C20EB525A0003D09F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -771,6 +744,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A203B739E960C623D274F740 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
