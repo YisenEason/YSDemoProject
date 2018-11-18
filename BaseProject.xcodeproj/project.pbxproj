@@ -50,6 +50,7 @@
 		A9E5AC13219C2B3E00DE27CA /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5AC0F219C2B3E00DE27CA /* GTMNSString+HTML.m */; };
 		A9E5AC17219C2C1E00DE27CA /* RSSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5AC16219C2C1E00DE27CA /* RSSManager.m */; };
 		A9E5AC22219D26BD00DE27CA /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5AC21219D26BD00DE27CA /* HUDManager.m */; };
+		A9E5AC26219EAF2D00DE27CA /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E5AC25219EAF2D00DE27CA /* WebViewController.m */; };
 		A9F28810213FD53D004219F6 /* UILabel+BoundingSize.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F2880F213FD53D004219F6 /* UILabel+BoundingSize.m */; };
 		A9F30B8C215CAAD10086441C /* NSObject+SBAdapterFont.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F30B8B215CAAD10086441C /* NSObject+SBAdapterFont.m */; };
 		A9F30B90215CBEC30086441C /* YSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F30B8F215CBEC30086441C /* YSTextField.m */; };
@@ -164,6 +165,8 @@
 		A9E5AC16219C2C1E00DE27CA /* RSSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSManager.m; sourceTree = "<group>"; };
 		A9E5AC20219D26BD00DE27CA /* HUDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
 		A9E5AC21219D26BD00DE27CA /* HUDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
+		A9E5AC24219EAF2D00DE27CA /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		A9E5AC25219EAF2D00DE27CA /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		A9F2880E213FD53D004219F6 /* UILabel+BoundingSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+BoundingSize.h"; sourceTree = "<group>"; };
 		A9F2880F213FD53D004219F6 /* UILabel+BoundingSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+BoundingSize.m"; sourceTree = "<group>"; };
 		A9F30B8A215CAAD10086441C /* NSObject+SBAdapterFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBAdapterFont.h"; sourceTree = "<group>"; };
@@ -510,6 +513,7 @@
 		A9B06D0E215B3A4F008DB52A /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				A9E5AC23219EAEB500DE27CA /* WebViewController */,
 				A93DD7702160802D00D073DC /* Alert */,
 				A9F30B8D215CBAA30086441C /* TextField */,
 				A9B06D0F215B3A58008DB52A /* TableViewCell */,
@@ -565,6 +569,15 @@
 				A9E5AC21219D26BD00DE27CA /* HUDManager.m */,
 			);
 			path = HUDManager;
+			sourceTree = "<group>";
+		};
+		A9E5AC23219EAEB500DE27CA /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A9E5AC24219EAF2D00DE27CA /* WebViewController.h */,
+				A9E5AC25219EAF2D00DE27CA /* WebViewController.m */,
+			);
+			path = WebViewController;
 			sourceTree = "<group>";
 		};
 		A9F2880D213FD4FE004219F6 /* Category */ = {
@@ -786,6 +799,7 @@
 				A9AD60C221392F4D00D5BD4D /* XXTableViewCell.m in Sources */,
 				A97FBF6720EB75730003D09F /* BaseViewController.m in Sources */,
 				A9F28810213FD53D004219F6 /* UILabel+BoundingSize.m in Sources */,
+				A9E5AC26219EAF2D00DE27CA /* WebViewController.m in Sources */,
 				A97FBF6320EB74BD0003D09F /* BaseViewModel.m in Sources */,
 				A93DD7732160805B00D073DC /* YSAlertViewController.m in Sources */,
 				A97FBF5C20EB56BD0003D09F /* PersonModel.m in Sources */,
