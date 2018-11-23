@@ -17,6 +17,7 @@
 #import "RSSManager.h"
 #import "HUDManager.h"
 #import "WebViewController.h"
+#import "WebSocketManager.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
 
@@ -31,6 +32,9 @@
     // Do any additional setup after loading the view, typically from a nib.
  
     [self.view addSubview:self.tableView];
+    
+    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=75534314b541424b98e0d844926c056c";
+    [[WebSocketManager shareWebSocketManager] connect];
 }
 
 #pragma mark - Lazy load

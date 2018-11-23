@@ -13,6 +13,7 @@ target 'BaseProject' do
    pod 'SDWebImage'
    pod 'Masonry'
    pod 'SDWebImage'
+   pod 'SocketRocket'
 #   pod 'INTULocationManager'  需要9.0以上才可以使用
 
 end

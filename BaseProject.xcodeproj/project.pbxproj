@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		169BFA28B784D98F90F7997E /* libPods-BaseProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2EF784F17BEB388AD630990 /* libPods-BaseProject.a */; };
+		A908B15521A7E5420055A1B4 /* WebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A908B15321A7E5420055A1B4 /* WebSocketManager.m */; };
 		A93DD76721607C1800D073DC /* TextFiledVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD76621607C1800D073DC /* TextFiledVC.m */; };
 		A93DD76B21607E2100D073DC /* LabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD76A21607E2100D073DC /* LabelVC.m */; };
 		A93DD76F21607F9800D073DC /* CustomAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93DD76E21607F9800D073DC /* CustomAlertVC.m */; };
@@ -75,6 +76,8 @@
 
 /* Begin PBXFileReference section */
 		2ADE2E77995462C52B27CEB2 /* Pods-BaseProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaseProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject.release.xcconfig"; sourceTree = "<group>"; };
+		A908B15321A7E5420055A1B4 /* WebSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketManager.m; sourceTree = "<group>"; };
+		A908B15421A7E5420055A1B4 /* WebSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketManager.h; sourceTree = "<group>"; };
 		A93DD76521607C1800D073DC /* TextFiledVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFiledVC.h; sourceTree = "<group>"; };
 		A93DD76621607C1800D073DC /* TextFiledVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFiledVC.m; sourceTree = "<group>"; };
 		A93DD76921607E2100D073DC /* LabelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelVC.h; sourceTree = "<group>"; };
@@ -218,6 +221,15 @@
 				C2EF784F17BEB388AD630990 /* libPods-BaseProject.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A908B15221A7E5420055A1B4 /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				A908B15421A7E5420055A1B4 /* WebSocketManager.h */,
+				A908B15321A7E5420055A1B4 /* WebSocketManager.m */,
+			);
+			path = WebSocket;
 			sourceTree = "<group>";
 		};
 		A93DD76421607BD300D073DC /* 自定义封装TextFiled */ = {
@@ -449,6 +461,7 @@
 		A97FBF7020EB80590003D09F /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A908B15221A7E5420055A1B4 /* WebSocket */,
 				A9E5AC1F219D268B00DE27CA /* HUDManager */,
 				A9E5AC14219C2B8D00DE27CA /* RSSManager */,
 				A93DD78E216CB15900D073DC /* NetworkManager */,
@@ -618,7 +631,6 @@
 				A97FBF1D20EB525A0003D09F /* Sources */,
 				A97FBF1E20EB525A0003D09F /* Frameworks */,
 				A97FBF1F20EB525A0003D09F /* Resources */,
-				A203B739E960C623D274F740 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -759,28 +771,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A203B739E960C623D274F740 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BaseProject/Pods-BaseProject-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -791,6 +781,7 @@
 				A988ED172175F29300D9412A /* UIImage+YSExtend.m in Sources */,
 				A93DD7B9216DF96D00D073DC /* CollectViewVC.m in Sources */,
 				A97FBF5F20EB60A80003D09F /* Professional.m in Sources */,
+				A908B15521A7E5420055A1B4 /* WebSocketManager.m in Sources */,
 				A93DD7C2216E057D00D073DC /* InterestCollectionViewCell.m in Sources */,
 				A97FBF7820EB80BC0003D09F /* UserInfo.m in Sources */,
 				A93DD786216B4F6D00D073DC /* NSLayoutConstraint+IBDesignable.m in Sources */,
