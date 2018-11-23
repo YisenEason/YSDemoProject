@@ -33,7 +33,7 @@
  
     [self.view addSubview:self.tableView];
     
-    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=75534314b541424b98e0d844926c056c";
+    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333";
     [[WebSocketManager shareWebSocketManager] connect];
 }
 
