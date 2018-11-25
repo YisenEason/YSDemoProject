@@ -33,8 +33,9 @@
  
     [self.view addSubview:self.tableView];
     
-    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333";
-    [[WebSocketManager shareWebSocketManager] connect];
+//    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333";
+    [[WebSocketManager shareWebSocketManager] initSocketWithPath:@"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333"];
+//    [[WebSocketManager shareWebSocketManager] connect];
 }
 
 #pragma mark - Lazy load

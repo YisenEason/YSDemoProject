@@ -21,6 +21,17 @@ static WebSocketManager *_instance;
     return _instance;
 }
 
+- (void)initSocketWithPath:(NSString *)path {
+    _path = path;
+    // App从后台返回前台的时候连接
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(connect)
+                                                 name:UIApplicationDidBecomeActiveNotification object:nil];
+    // App进入后台的时候断开Websocket
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(close) name: UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
 - (void)connect {
     if (_path == nil || [_path isEqualToString:@""]) {
         NSLog(@"请设置websocket地址");
@@ -31,14 +42,9 @@ static WebSocketManager *_instance;
     [_socket open];
 }
 
-- (void)reconnect {
-    _socket = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:_path] protocols:nil allowsUntrustedSSLCertificates:YES];
-    _socket.delegate = self;
-    [_socket open];
-}
-
 - (void)close {
-    if (!_socket) {
+    if (_socket) {
+        NSLog(@"断开Websocket");
         [_socket close];
     }
 }
@@ -89,7 +95,7 @@ static WebSocketManager *_instance;
         [_timer invalidate];
         _timer = nil;
     }
-    _timer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(ping) userInfo:nil repeats:YES];
+    _timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(ping) userInfo:nil repeats:YES];
     [_timer fire];
     _pingToPongCount = 0;
 }
@@ -105,10 +111,10 @@ static WebSocketManager *_instance;
         [_socket sendPing:nil];
     }
     _pingToPongCount++;
-    if (_pingToPongCount > 5) {
+    if (_pingToPongCount > 2) {
         NSLog(@"多次ping后无服务器响应pong，重连socket.");
         _pingToPongCount = 0;
-        [self reconnect];
+        [self connect];
     }
 }
 

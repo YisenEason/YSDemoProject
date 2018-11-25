@@ -50,6 +50,7 @@
         [[HUDManager shareHUDManager] hideLoadingInView:weakSelf.view];
     } failure:^(NSError *error, id result) {
         NSLog(@"%@", error);
+        [[HUDManager shareHUDManager] hideLoadingInView:weakSelf.view];
         [[HUDManager shareHUDManager] showMessage:error.userInfo[NSLocalizedDescriptionKey] view:weakSelf.view];
     }];
 }

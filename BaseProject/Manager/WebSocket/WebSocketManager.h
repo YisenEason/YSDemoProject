@@ -21,6 +21,8 @@
 
 + (instancetype)shareWebSocketManager;
 
+- (void)initSocketWithPath:(NSString *)path;
+
 - (void)connect;
 
 - (void)close;
