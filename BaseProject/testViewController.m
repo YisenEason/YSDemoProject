@@ -1,39 +1,26 @@
 //
-//  CustomAlertVC.m
+//  testViewController.m
 //  BaseProject
 //
-//  Created by eason yi on 2018/9/30.
+//  Created by eason yi on 2018/11/27.
 //  Copyright © 2018年 eason. All rights reserved.
 //
 
-#import "CustomAlertVC.h"
-#import "YSAlertViewController.h"
+#import "testViewController.h"
 
-@interface CustomAlertVC ()
+@interface testViewController ()
 
 @end
 
-@implementation CustomAlertVC
+@implementation testViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [btn setTitle:@"显示弹窗" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(show:) forControlEvents:UIControlEventTouchUpInside];
+    btn.frame = CGRectMake(0, 0, 20, 20);
     [self.view addSubview:btn];
-    [btn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.view).with.offset(150);
-    }];
-}
-
-- (void)show:(id)sender {
-    NSLog(@"显示弹窗");
-    
-    YSAlertViewController *alert = [YSAlertViewController alertShow];
-    [self.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

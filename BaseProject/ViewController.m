@@ -16,7 +16,6 @@
 #import "CollectViewVC.h"
 #import "RSSManager.h"
 #import "HUDManager.h"
-#import "WebViewController.h"
 #import "WebSocketManager.h"
 
 @interface ViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -33,9 +32,6 @@
  
     [self.view addSubview:self.tableView];
     
-//    [WebSocketManager shareWebSocketManager].path = @"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333";
-    [[WebSocketManager shareWebSocketManager] initSocketWithPath:@"wss://uat.kluppen.nl/klup/chatws?language=en&token=8cdb067a2776455ba152c332dbe52333"];
-//    [[WebSocketManager shareWebSocketManager] connect];
 }
 
 #pragma mark - Lazy load
@@ -92,11 +88,8 @@
             break;
         }
         case 4:{
-//            CollectViewVC *vc = [[CollectViewVC alloc] init];
-//            [self.navigationController pushViewController:vc animated:YES];
-            WebViewController *webView = [[WebViewController alloc] init];
-            webView.url = @"https://www.douyu.com";
-            [self.navigationController pushViewController:webView animated:YES];
+            CollectViewVC *vc = [[CollectViewVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
             break;
         }
         default:
